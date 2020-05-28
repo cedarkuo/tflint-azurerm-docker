@@ -6,10 +6,10 @@ RUN wget https://github.com/terraform-linters/tflint/releases/download/v0.16.1/t
     && unzip /tmp/tflint_linux_amd64.zip -d /usr/local/bin/ \
     && rm /tmp/tflint_linux_amd64.zip
 
-RUN wget https://github.com/terraform-linters/tflint-ruleset-azurerm/releases/download/v0.1.0/tflint-ruleset-azurerm_linux_amd64.zip -O /root/tflint-ruleset-azurerm_linux_amd64.zip \
+RUN wget https://github.com/terraform-linters/tflint-ruleset-azurerm/releases/download/v0.1.0/tflint-ruleset-azurerm_linux_amd64.zip -P /tmp \
     && mkdir -p /root/.tflint.d/plugins/ \
-    && unzip /root/tflint-ruleset-azurerm_linux_amd64.zip -d /root/.tflint.d/plugins/ \
-    && rm /root/tflint-ruleset-azurerm_linux_amd64.zip
+    && unzip /tmp/tflint-ruleset-azurerm_linux_amd64.zip -d /root/.tflint.d/plugins/ \
+    && rm /tmp/tflint-ruleset-azurerm_linux_amd64.zip
 
 ENTRYPOINT ["tflint"]
 WORKDIR /data
