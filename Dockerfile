@@ -2,8 +2,8 @@ FROM alpine:3.11
 
 LABEL maintainer=cedarkuo
 
-ENV TFLINT_VER=v0.17.0
-ENV AZRUERM_PLUGIN_VER=v0.2.0
+ENV TFLINT_VER=v0.18.0
+ENV AZRUERM_PLUGIN_VER=v0.3.0
 
 RUN wget https://github.com/terraform-linters/tflint/releases/download/${TFLINT_VER}/tflint_linux_amd64.zip -P /tmp \
     && unzip /tmp/tflint_linux_amd64.zip -d /usr/local/bin/ \
